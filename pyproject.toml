@@ -1,12 +1,19 @@
 [tool.poetry]
-name = "poetry-template"
+name = "stable-diffusion-server"
 version = "0.1.0"
 description = ""
 authors = ["torippy <47879788+torippy1024@users.noreply.github.com>"]
 readme = "README.md"
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
+fastapi = "^0.91.0"
+uvicorn = {extras = ["standard"], version = "^0.20.0"}
+torch = {url = "https://download.pytorch.org/whl/cu116/torch-1.13.1%2Bcu116-cp310-cp310-win_amd64.whl"}
+diffusers = "^0.12.1"
+transformers = "^4.26.1"
+accelerate = "^0.16.0"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
